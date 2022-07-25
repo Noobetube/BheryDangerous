@@ -1,0 +1,44 @@
+class UnderAge extends Exception {
+
+    int age;
+    
+    UnderAge(int age) {
+        this.age = age;
+    }
+    
+    public void setAge(int age ){
+        this.age =age ;
+    }
+   
+    @Override
+    public String getMessage() {
+    return age + " is less than the eligible age of 18";
+    }
+   }
+   
+   public class exceptionDemo{
+       static void test(int age) throws UnderAge{
+   
+           if(age<18){
+           throw new UnderAge(age);
+           }else{
+               System.out.println("Eligible age");
+           }
+               
+       }
+   
+       public static void main(String []args){
+      
+           try{
+               test(15);
+               test(18);
+           }
+           catch(UnderAge x){
+               System.out.println("Caught: "+x );
+               System.out.println();
+               
+           }
+       }
+   
+       
+   }
