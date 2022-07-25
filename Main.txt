@@ -1,0 +1,11 @@
+import P1.*;
+import P2.*;
+
+public class Main {
+    public static void main(String[] args) {
+        TwoDim ob1 = new TwoDim(1, 2);
+        ThreeDim ob2 = new ThreeDim(ob1, 3);
+        System.out.println("TwoDim object : " + ob1);
+        System.out.println("ThreeDim object : " + ob2);
+    }
+}

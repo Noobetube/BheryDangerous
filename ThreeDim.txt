@@ -1,0 +1,49 @@
+package P2;
+
+import P1.TwoDim;
+
+public class ThreeDim extends TwoDim {
+    private int z;
+
+    public ThreeDim() {
+        super();
+        z = 0;
+    }
+
+    public ThreeDim(int x, int y, int z) {
+        super(x, y);
+        this.z = z;
+    }
+
+    public ThreeDim(int x, int y) {
+        super(x, y);
+        z = 0;
+    }
+
+    public ThreeDim(TwoDim obj, int z) {
+        super(obj.getX(), obj.getY());
+        this.z = z;
+    }
+
+    public void setZ(int z) {
+        this.z = z;
+    }
+
+    public void setXYZ(int x, int y, int z) {
+        super.setXY(x, y);
+        setZ(z);
+    }
+
+    public int getZ() {
+        return z;
+    }
+
+    public int[] getXYZ() {
+        int arr[] = { super.getX(), super.getY(), z };
+        return arr;
+    }
+
+    public String toString() {
+        return "(" + super.getX() + "," + super.getY() + "," + z + ")";
+    }
+}
